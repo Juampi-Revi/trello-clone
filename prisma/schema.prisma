@@ -1,0 +1,23 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Cambia el proveedor de la base de datos a MySQL
+datasource db {
+  provider = "mysql"
+  url      = "mysql://root:ROOT@localhost:3309/nombre_de_la_base_de_datos"
+  relationMode = "prisma"
+}
+
+model Board {
+  id String @id @default(uuid())
+
+  title String
+}
+
